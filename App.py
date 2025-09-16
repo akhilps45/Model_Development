@@ -4,7 +4,7 @@ import pickle  # or joblib if you saved the model that way
 
 
 # Load trained modelgit 
-with open(r"beer_servings_mode1.pkl", "rb") as f:
+with open("beer_servings_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 st.title("🍺 Total Alcohol Servings Prediction App")
