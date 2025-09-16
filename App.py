@@ -1,18 +1,11 @@
 import streamlit as st
 import pandas as pd
 import pickle  # or joblib if you saved the model that way
-import joblib
-import os
 
 
 # Load trained modelgit 
-MODEL_PATH = "beer_servings_pipeline.joblib"
-
-if not os.path.exists(MODEL_PATH):
-    st.error(f"Model file '{MODEL_PATH}' not found. Make sure it is in the same folder as App.py.")
-    st.stop()
-
-model = joblib.load(MODEL_PATH)
+with open(r"beer_servings_mode1.pkl", "rb") as f:
+    model = pickle.load(f)
 
 st.title("🍺 Total Alcohol Servings Prediction App")
 st.image(
